@@ -7,17 +7,24 @@ public class MommifierTest {
 
     @Test
     void string_no_vowels(){
-        String noVowels = "green";
+        String noVowels = "";
         ModifyString modifyString = new ModifyString();
         String expected = modifyString.addMommy(noVowels);
-        assertEquals(expected,"green");
+        assertEquals(expected,"");
     }
 
     @Test
-    void string_vowels_less_thirty_percent(){
-        String noVowels = "green";
+    void string_vowels_less_and_equals_thirty_percent(){
+        String noVowels = "grn";
         ModifyString modifyString = new ModifyString();
         String expected = modifyString.addMommy(noVowels);
-        assertEquals(expected,"green");
+        assertEquals(expected,"grn");
+    }
+    @Test
+    void string_vowels_more_than_thirty_percent(){
+        String noVowels = "app";
+        ModifyString modifyString = new ModifyString();
+        String expected = modifyString.addMommy(noVowels);
+        assertEquals(expected,"amommypp");
     }
 }
